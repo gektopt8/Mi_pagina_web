@@ -36,8 +36,8 @@ position: relative;
     padding-left: 0px;
     top: 100%; /* Se posiciona justo abajo del botón principal */
     left: 0;
-    background-color: #0f172a;
-    min-width: 142px;
+    background-color: black;
+    min-width: 129px;
     box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
     list-style: none;
     opacity: 0;
@@ -75,3 +75,6 @@ p {
     font-style: italic; 
 }
 
+.pagina {
+    margin:20px 30px;
+}
