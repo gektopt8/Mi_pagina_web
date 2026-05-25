@@ -1,6 +1,33 @@
 
 
 
+html {
+   
+    scroll-padding-top: 60px; 
+    scroll-behavior: smooth; 
+}
+
+body {
+background-color: #0d1527;
+color: #ffffff;
+}
+
+h1, h2, h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1px; 
+    
+}
+
+p {
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 400;
+    font-style: italic; 
+}
+
+.pagina {
+    margin:20px 30px;
+}
+
 .menui {
     margin: 0px;
     padding: 0px;
@@ -34,7 +61,7 @@ position: relative;
 .submenu {
     position: absolute;
     padding-left: 0px;
-    top: 100%; /* Se posiciona justo abajo del botón principal */
+    top: 100%; 
     left: 0;
     background-color: black;
     min-width: 129px;
@@ -49,32 +76,5 @@ position: relative;
 .tiene-submenu:hover .submenu {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0); /* Vuelve a su posición original */
-}
-
-html {
-   
-    scroll-padding-top: 60px; 
-    scroll-behavior: smooth; 
-}
-
-body {
-background-color: #0d1527;
-color: #ffffff;
-}
-
-h1, h2, h3 {
-    font-family: 'Bebas Neue', sans-serif;
-    letter-spacing: 1px; 
-    
-}
-
-p {
-    font-family: 'Chakra Petch', sans-serif;
-    font-weight: 400;
-    font-style: italic; 
-}
-
-.pagina {
-    margin:20px 30px;
+    transform: translateY(0); 
 }
