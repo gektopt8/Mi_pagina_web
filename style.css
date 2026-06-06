@@ -1,63 +1,81 @@
+/* ==========================================================================
+   ESTILOS GENERALES Y CONFIGURACIÓN BASE
+   ========================================================================== */
 html {
-   
-    scroll-padding-top: 60px; 
-    scroll-behavior: smooth; 
+    scroll-padding-top: 70px; /* Espacio para que el menú fijo no tape los títulos */
+    scroll-behavior: smooth; /* Desplazamiento suave al cliquear el menú */
 }
 
 body {
-background-color: #0d1527;
-color: #ffffff;
+    background-color: #04011d; /* Fondo oscuro para el espacio exterior */
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
 }
 
+/* Tipografías de los títulos y espaciado */
 h1, h2, h3 {
     font-family: 'Bebas Neue', sans-serif;
     letter-spacing: 1px; 
-    
 }
 
+/* Tipografía de los párrafos */
 p {
     font-family: 'Chakra Petch', sans-serif;
     font-weight: 400;
     font-style: italic; 
 }
 
+/* Contenedor principal de la página (Estructura en caja centrada) */
 .pagina {
-    margin:20px 30px;
+    max-width: 1000px;
+    width: 100%; /* Permite que se adapte a pantallas chicas (Responsive) */
+    margin: 0 auto;
+    padding: 80px 20px 20px 20px; /* Padding superior para que el contenido no quede abajo del menú */
+    background-color: #0d1527; /* Azul original del fondo interno */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7); /* Sombra lateral */
+    box-sizing: border-box; /* Manejo correcto del Box Model */
 }
 
+/* ==========================================================================
+   MENÚ DE NAVEGACIÓN (FLEXBOX Y MENÚ DESPLEGABLE)
+   ========================================================================== */
 .menui {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    display: flex;
-    background-color:rgb(2, 0, 17);
+    margin: 0;
+    padding: 0;
+    display: flex; /* Flexbox para alinear los ítems del menú en fila */
+    background-color: rgb(0, 0, 0);
     list-style: none;
     position: fixed;
     top: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Centra el menú fijo respecto a la pantalla */
+    max-width: 1000px; /* Alineado al ancho de la página central */
     width: 100%;
     z-index: 1000;
 }
 
 .menui > li {
-position: relative;
+    position: relative;
 }
 
 .menui a {
     display: block;
-    padding: 15px 20px;
+    padding: 15px 30px;
     color: white;
     text-decoration: none;
     font-family: sans-serif;
 }
 
+/* Efecto Hover en los enlaces del menú */
 .menui a:hover {
     background-color: #103e88; 
 }
 
+/* Configuración del Submenú oculto */
 .submenu {
     position: absolute;
-    padding-left: 0px;
+    padding-left: 0;
     top: 100%; 
     left: 0;
     background-color: black;
@@ -67,20 +85,23 @@ position: relative;
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
-    transition: all 0.3s ease; 
+    transition: all 0.3s ease; /* Transición suave de visualización */
 }
 
+/* Muestra el submenú al pasar el cursor */
 .tiene-submenu:hover .submenu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0); 
 }
 
-
-
+/* ==========================================================================
+   CARRUSEL DE IMÁGENES (MODELO DE CAJAS Y SELECTORES AVANZADOS)
+   ========================================================================== */
 .carrusel-caja {
     position: relative;
     max-width: 550px;
+    width: 100%; /* Adaptable a pantallas móviles */
     height: 500px;
     margin: 30px auto;
     overflow: hidden;
@@ -89,15 +110,17 @@ position: relative;
     box-shadow: 0 0 20px rgba(16, 62, 136, 0.6);
 }
 
+/* Ocultamos los botones radio del carrusel */
 .carrusel-caja input[type="radio"] {
     display: none;
 }
 
+/* Tira contenedora de las imágenes en Flexbox (600% para 6 imágenes) */
 .slides {
     display: flex;
     width: 600%;
     height: 100%;
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Animación de deslizamiento */
 }
 
 .slide {
@@ -114,6 +137,7 @@ position: relative;
     box-sizing: border-box;
 }
 
+/* Desplazamiento de la tira según el selector de radio activo */
 #radio1:checked ~ .slides { transform: translateX(0%); }
 #radio2:checked ~ .slides { transform: translateX(-16.666%); }
 #radio3:checked ~ .slides { transform: translateX(-33.333%); }
@@ -121,6 +145,7 @@ position: relative;
 #radio5:checked ~ .slides { transform: translateX(-66.666%); }
 #radio6:checked ~ .slides { transform: translateX(-83.333%); }
 
+/* Controles de flechas laterales */
 .flechas {
     position: absolute;
     top: 0;
@@ -153,6 +178,7 @@ position: relative;
     transform: scale(0.9);
 }
 
+/* Mostrar grupo de flechas correspondiente a la foto activa */
 #radio1:checked ~ .flechas-1,
 #radio2:checked ~ .flechas-2,
 #radio3:checked ~ .flechas-3,
@@ -160,4 +186,25 @@ position: relative;
 #radio5:checked ~ .flechas-5,
 #radio6:checked ~ .flechas-6 {
     display: flex;
+}
+
+/* ==========================================================================
+   ELEMENTOS DE DISEÑO DECORATIVOS
+   ========================================================================== */
+.linea-facha {
+    border: none;
+    height: 3px;
+    max-width: 600px;
+    width: 100%;
+    margin: 20px auto;
+    background: linear-gradient(90deg, transparent, #103e88, #b5179e, #103e88, transparent);
+    box-shadow: 0 0 10px rgba(16, 62, 136, 0.8);
+    border-radius: 2px;
+}
+
+/* Media query básica para pantallas chicas (Mejora el Responsive) */
+@media (max-width: 600px) {
+    .carrusel-caja {
+        height: 350px; /* Achica el alto en celulares para que no tape toda la pantalla */
+    }
 }
