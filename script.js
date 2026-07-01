@@ -15,3 +15,16 @@ function elegirMecanicaAleatoria() {
 }
 
 boton.addEventListener("click", elegirMecanicaAleatoria);
+
+// Evento 2: Cuando el mouse entra al botón (mouseover)
+boton.addEventListener("mouseover", function() {
+    boton.style.backgroundColor = "#f9a826"; // Se pinta del naranja de Rocket League
+    boton.style.transform = "scale(1.05)";   /* Se agranda un poquito (efecto tuning) */
+    boton.style.transition = "all 0.2s ease";
+});
+
+// Evento 3: Cuando el mouse se va del botón (mouseout)
+boton.addEventListener("mouseout", function() {
+    boton.style.backgroundColor = "#2563eb"; // Vuelve al azul original
+    boton.style.transform = "scale(1)";      // Vuelve a su tamaño normal
+});
