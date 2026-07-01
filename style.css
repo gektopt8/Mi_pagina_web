@@ -202,9 +202,40 @@ p {
     border-radius: 2px;
 }
 
-/* Media query básica para pantallas chicas (Mejora el Responsive) */
-@media (max-width: 600px) {
-    .carrusel-caja {
-        height: 350px; /* Achica el alto en celulares para que no tape toda la pantalla */
+
+
+/* 1. SEGUNDA MEDIA QUERY: Para Tablets (Pantallas menores a 768px) */
+@media (max-width: 768px) {
+    .menui {
+        flex-wrap: wrap; /* Si los botones no entran, bajan ordenados */
+        justify-content: center;
     }
 }
+
+/* 2. PRIMERA MEDIA QUERY: Para Celulares (Pantallas menores a 480px) */
+@media (max-width: 480px) {
+    .menui {
+        flex-direction: column; /* El menú se vuelve vertical en celulares */
+        position: static;       /* Le sacamos el fixed para que no tape toda la pantalla */
+    }
+    
+    html { 
+        scroll-padding-top: 0;  /* Reseteamos el padding ya que el menú no flota */
+    }
+    
+    .pagina {
+        margin: 10px 15px;      /* Achicamos los márgenes laterales de la página */
+    }
+}
+
+/* ==========================================
+   OPTIMIZACIÓN RESPONSIVE PARA VIDEOS (IFRAMES)
+   ========================================== */
+iframe {
+    max-width: 100%;    /* Impide que el video sea más ancho que la pantalla del celular */
+    width: 100%;        /* Se estira de forma fluida hasta el límite de su contenedor */
+    height: auto;       /* Mantiene la proporción de imagen para que no se deforme */
+    aspect-ratio: 16 / 9; /* Obliga al video a mantener el formato panorámico estándar */
+    border-radius: 8px; /* Sumamos bordes redondeados (suma puntos para la consigna) */
+}
+

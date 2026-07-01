@@ -11,9 +11,11 @@
             rel="stylesheet">
         <link rel="stylesheet" href="style.css">
         <title>Guía Rocket League</title>
+
     </head>
 
     <body>
+
         <div class="pagina">
             <header>
 
@@ -342,6 +344,7 @@
                 <hr>
 
                 <article id="mecanicas">
+
                     <h2>Mecánicas</h2>
                     <p>
                         En Rocket League, las mecánicas son fundamentales para
@@ -350,6 +353,10 @@
                         de
                         manera más eficiente.
                     </p>
+
+                    <button id="btn-mecanica">ELEGIR MECÁNICA AL AZAR</button>
+                    <p>Mecánica sugerida: <strong
+                            id="mecanica-aleatoria">Ninguna todavía</strong></p>
 
                     <section id="mecanicas-principiante">
                         <h3>Mecánicas Principiantes</h3>
@@ -657,27 +664,26 @@
                     <p>Las horas pueden variar dependiendo de la dedicación, la
                         práctica del jugador y el modo de juego.</p>
                 </article>
-                <footer>
-                    <article>
-                        <h3>Contacto</h3>
-                        <form>
-                            <label for="nombre">Nombre:</label><br>
-                            <input type="text" id="nombre" name="nombre"
-                                required><br><br>
 
-                            <label for="email">Email:</label><br>
-                            <input type="email" id="email" name="email"
-                                required><br><br>
+                <article>
+                    <h3>Contacto</h3>
+                    <form>
+                        <label for="nombre">Nombre:</label><br>
+                        <input type="text" id="nombre" name="nombre"
+                            required><br><br>
 
-                            <label for="mensaje">Mensaje:</label><br>
-                            <textarea id="mensaje" name="mensaje" rows="4"
-                                required></textarea><br><br>
+                        <label for="email">Email:</label><br>
+                        <input type="email" id="email" name="email"
+                            required><br><br>
 
-                            <button type="submit">Enviar</button>
-                        </form>
-                    </article>
+                        <label for="mensaje">Mensaje:</label><br>
+                        <textarea id="mensaje" name="mensaje" rows="4"
+                            required></textarea><br><br>
 
-                </footer>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </article>
+                <script src="script.js"></script>
             </main>
 
             <footer>
