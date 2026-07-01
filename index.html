@@ -667,7 +667,7 @@
 
                 <article>
                     <h3>Contacto</h3>
-                    <form>
+                    <form id="formulario-contacto">
                         <label for="nombre">Nombre:</label><br>
                         <input type="text" id="nombre" name="nombre"
                             required><br><br>
@@ -679,7 +679,8 @@
                         <label for="mensaje">Mensaje:</label><br>
                         <textarea id="mensaje" name="mensaje" rows="4"
                             required></textarea><br><br>
-
+                        <p id="mensaje-alerta"
+                            style="font-weight: bold; margin-bottom: 10px;"></p>
                         <button type="submit">Enviar</button>
                     </form>
                 </article>
